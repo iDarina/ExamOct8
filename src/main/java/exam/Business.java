@@ -31,6 +31,11 @@ public class Business implements Payable{
 
     @Override
     public boolean payTaxOnEarnings() {
-        return true;
+        boolean tax = false;
+        if (getProductPrice() * getProductQtySupplied() >= 100.000){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

@@ -4,8 +4,9 @@ public class Manager extends Employee{
     protected final double EXTRA_DISCOUNT = 0.5;
     private double salary;
 
-    public Manager(String name, Size size, Cloth[] clothingItems) {
+    public Manager(String name, double salary, Size size, Cloth[] clothingItems) {
         super(name, size, clothingItems);
+        this.salary = salary;
     }
 
     public double getSalary() {
@@ -37,6 +38,9 @@ public class Manager extends Employee{
 
     @Override
     public void printInfo() {
-        System.out.println(getName() + getSalary());
+        System.out.print(getName() + " Makes " + getSalary() + " and his shopping consist of the following clothing items: ");
+        for (Cloth item : getClothingItems()){
+            System.out.print(item);
+        }
     }
 }

@@ -8,8 +8,10 @@ public class Student extends Customer{
 
     public Student(String name, Size size, Cloth[] clothingItems) {
         super(name, size, clothingItems);
-        this.studentID = studentsCounter;
         studentsCounter++;
+        this.studentID = studentsCounter;
+
+
     }
 
     public long getStudentID() {
@@ -25,13 +27,13 @@ public class Student extends Customer{
     }
 
     public void printStudentsCounter(){
-        System.out.println("We have created " +  studentsCounter);
+        System.out.println("We have created " + studentsCounter);
     }
 
 
 
     @Override
     public void printInfo() {
-        System.out.println("Student ID " + this.studentsCounter + ": " + "Student name: " + getName());
+        System.out.println("Student ID " + studentID + ": " + "Student name: " + getName());
     }
 }

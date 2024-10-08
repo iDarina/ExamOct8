@@ -7,13 +7,13 @@ public class Main {
         Cloth clothingItem2 = new Cloth("T-shirt", 8.00, Size.M);
         Cloth clothingItem3 = new Cloth("Hat", 2.00, Size.L);
 
-        Cloth[] cloths = {clothingItem1, clothingItem2, clothingItem3};
+        Cloth[] shoppingBag = {clothingItem1, clothingItem2, clothingItem3};
 
-        System.out.println(UtilityMethods.calculateSubtotal(cloths));
+        System.out.println("Subtotal: " + UtilityMethods.calculateSubtotal(shoppingBag));
 
 
-        Student student1 = new Student("Mike", Size.L, cloths);
-        Student student2 = new Student("Jane", Size.S, cloths);
+        Student student1 = new Student("Mike", Size.L, shoppingBag);
+        Student student2 = new Student("Jane", Size.S, shoppingBag);
 
         Student[] listOfStudents = {student1, student2};
 
@@ -22,6 +22,26 @@ public class Main {
         }
 
         System.out.println(Student.getStudentsCounter());
+
+
+        HourlyEmployee hourlyEmployee = new HourlyEmployee("Alex", 40, 20.0, Size.S, shoppingBag);
+        hourlyEmployee.setHoursWorked(-20);
+
+
+        Manager manager = new Manager("Terry", 1000.00, Size.L, shoppingBag);
+        manager.printInfo();
+
+        System.out.println(hourlyEmployee.printPriceAfterDiscount(clothingItem1));
+
+        System.out.println(UtilityMethods.checkFitting(student1, clothingItem3));
+
+        Business business = new Business("Acme", 10000, 20);
+        business.payTaxOnEarnings();
+
+        Payable[] payables = {hourlyEmployee, manager, business};
+        UtilityMethods.printClassNamesOfPayableEntities(payables);
+
+
 
 
 

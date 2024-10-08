@@ -9,8 +9,12 @@ public abstract class Customer extends Person {
     }
 
     public double printPriceAfterDiscount(Cloth cloth){
-        return cloth.getPrice();
+        double originalPrice = cloth.getPrice();
+        double discountAmount = originalPrice / 0.5;
+        return discountAmount;
     }
+
+
 
     public Cloth[] getClothingItems() {
         return clothingItems;

@@ -18,11 +18,7 @@ public class UtilityMethods {
     //???
     public static void printClassNamesOfPayableEntities(Payable[] payables){
         for (Payable pay : payables){
-            if (pay instanceof Payable){
-                System.out.println(pay + "is payable");
-            }else{
-                System.out.println(pay + "is not payable");
-            }
+            System.out.println(pay);
         }
     }
 

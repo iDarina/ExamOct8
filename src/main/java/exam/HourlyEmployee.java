@@ -4,12 +4,18 @@ public class HourlyEmployee extends Employee {
     private float hoursWorked;
     private double hourlyWage;
 
-    public HourlyEmployee(String name, Size size, Cloth[] clothingItems) {
+    public HourlyEmployee(String name, float hoursWorked, double hourlyWage,  Size size, Cloth[] clothingItems) {
         super(name, size, clothingItems);
+        this.hoursWorked = hoursWorked;
+        this.hourlyWage = hourlyWage;
     }
 
     public void setHoursWorked(float hoursWorked) {
-        this.hoursWorked = hoursWorked;
+        if (hoursWorked > 0) {
+            this.hoursWorked = hoursWorked;
+        }else{
+            System.out.println("Hours Worked cannot be a negative number");
+        }
     }
 
     public void setHourlyWage(double hourlyWage) {
